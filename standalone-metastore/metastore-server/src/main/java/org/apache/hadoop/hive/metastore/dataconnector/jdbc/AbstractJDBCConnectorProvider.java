@@ -28,7 +28,7 @@ public abstract class AbstractJDBCConnectorProvider extends AbstractDataConnecto
 
   // duplicate constants from Constants.java to avoid a dependency on hive-common
   public static final String JDBC_HIVE_STORAGE_HANDLER_ID =
-      "org.apache.hive.storage.jdbc.JdbcStorageHandler";
+          "org.apache.hive.storage.jdbc.JdbcStorageHandler";
   public static final String JDBC_CONFIG_PREFIX = "hive.sql";
   public static final String JDBC_CATALOG = JDBC_CONFIG_PREFIX + ".catalog";
   public static final String JDBC_SCHEMA = JDBC_CONFIG_PREFIX + ".schema";
@@ -208,7 +208,7 @@ public abstract class AbstractJDBCConnectorProvider extends AbstractDataConnecto
       return table;
     } catch (Exception e) {
       LOG.warn("Exception retrieving remote table " + scoped_db + "." + tableName + " via data connector "
-          + connector.getName());
+              + connector.getName());
       throw new MetaException("Error retrieving remote table:" + e);
     } finally {
       try {
@@ -238,62 +238,62 @@ public abstract class AbstractJDBCConnectorProvider extends AbstractDataConnecto
   protected String getDataType(String mySqlType, int size) {
     switch(mySqlType.toLowerCase())
     {
-    case "char":
-      return ColumnType.CHAR_TYPE_NAME + wrapSize(size);
-    case "varchar":
-    case "tinytext":
-      return ColumnType.VARCHAR_TYPE_NAME + wrapSize(size);
-    case "text":
-    case "mediumtext":
-    case "enum":
-    case "set":
-    case "tsvector":
-    case "tsquery":
-    case "uuid":
-    case "json":
-      return ColumnType.STRING_TYPE_NAME;
-    case "blob":
-    case "mediumblob":
-    case "longblob":
-    case "bytea":
-      return ColumnType.BINARY_TYPE_NAME;
-    case "tinyint":
-      return ColumnType.TINYINT_TYPE_NAME;
-    case "smallint":
-    case "smallserial":
-      return ColumnType.SMALLINT_TYPE_NAME;
-    case "mediumint":
-    case "int":
-    case "serial":
-      return ColumnType.INT_TYPE_NAME;
-    case "bigint":
-    case "bigserial":
-    case "money":
-      return ColumnType.BIGINT_TYPE_NAME;
-    case "float":
-    case "real":
-      return ColumnType.FLOAT_TYPE_NAME;
-    case "double":
-    case "double precision":
-      return ColumnType.DOUBLE_TYPE_NAME;
-    case "decimal":
-    case "numeric":
-      return ColumnType.DECIMAL_TYPE_NAME;
-    case "date":
-      return ColumnType.DATE_TYPE_NAME;
-    case "datetime":
-      return ColumnType.DATETIME_TYPE_NAME;
-    case "timestamp":
-    case "time":
-    case "interval":
-      return ColumnType.TIMESTAMP_TYPE_NAME;
-    case "timestampz":
-    case "timez":
-      return ColumnType.TIMESTAMPTZ_TYPE_NAME;
-    case "boolean":
-      return ColumnType.BOOLEAN_TYPE_NAME;
-    default:
-      return ColumnType.VOID_TYPE_NAME;
+      case "char":
+        return ColumnType.CHAR_TYPE_NAME + wrapSize(size);
+      case "varchar":
+      case "tinytext":
+        return ColumnType.VARCHAR_TYPE_NAME + wrapSize(size);
+      case "text":
+      case "mediumtext":
+      case "enum":
+      case "set":
+      case "tsvector":
+      case "tsquery":
+      case "uuid":
+      case "json":
+        return ColumnType.STRING_TYPE_NAME;
+      case "blob":
+      case "mediumblob":
+      case "longblob":
+      case "bytea":
+        return ColumnType.BINARY_TYPE_NAME;
+      case "tinyint":
+        return ColumnType.TINYINT_TYPE_NAME;
+      case "smallint":
+      case "smallserial":
+        return ColumnType.SMALLINT_TYPE_NAME;
+      case "mediumint":
+      case "int":
+      case "serial":
+        return ColumnType.INT_TYPE_NAME;
+      case "bigint":
+      case "bigserial":
+      case "money":
+        return ColumnType.BIGINT_TYPE_NAME;
+      case "float":
+      case "real":
+        return ColumnType.FLOAT_TYPE_NAME;
+      case "double":
+      case "double precision":
+        return ColumnType.DOUBLE_TYPE_NAME;
+      case "decimal":
+      case "numeric":
+        return ColumnType.DECIMAL_TYPE_NAME;
+      case "date":
+        return ColumnType.DATE_TYPE_NAME;
+      case "datetime":
+        return ColumnType.DATETIME_TYPE_NAME;
+      case "timestamp":
+      case "time":
+      case "interval":
+        return ColumnType.TIMESTAMP_TYPE_NAME;
+      case "timestampz":
+      case "timez":
+        return ColumnType.TIMESTAMPTZ_TYPE_NAME;
+      case "boolean":
+        return ColumnType.BOOLEAN_TYPE_NAME;
+      default:
+        return ColumnType.VOID_TYPE_NAME;
     }
   }
 
