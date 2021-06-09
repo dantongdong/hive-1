@@ -18,16 +18,18 @@ int _kHiveObjectTypeValues[] = {
   HiveObjectType::DATABASE,
   HiveObjectType::TABLE,
   HiveObjectType::PARTITION,
-  HiveObjectType::COLUMN
+  HiveObjectType::COLUMN,
+  HiveObjectType::DATACONNECTOR
 };
 const char* _kHiveObjectTypeNames[] = {
   "GLOBAL",
   "DATABASE",
   "TABLE",
   "PARTITION",
-  "COLUMN"
+  "COLUMN",
+  "DATACONNECTOR"
 };
-const std::map<int, const char*> _HiveObjectType_VALUES_TO_NAMES(::apache::thrift::TEnumIterator(5, _kHiveObjectTypeValues, _kHiveObjectTypeNames), ::apache::thrift::TEnumIterator(-1, NULL, NULL));
+const std::map<int, const char*> _HiveObjectType_VALUES_TO_NAMES(::apache::thrift::TEnumIterator(6, _kHiveObjectTypeValues, _kHiveObjectTypeNames), ::apache::thrift::TEnumIterator(-1, NULL, NULL));
 
 std::ostream& operator<<(std::ostream& out, const HiveObjectType::type& val) {
   std::map<int, const char*>::const_iterator it = _HiveObjectType_VALUES_TO_NAMES.find(val);
